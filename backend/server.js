@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("Welcome to my server!");
+  res.send({msg:"Welcome to gadget-grid api"});
 });
 
 app.get("/products", (req, res) => {
@@ -72,21 +72,6 @@ app.get("/products/:id", (req, res) => {
   res.json(phone);
 });
 
-// app.get("/product/search", (req, res) => {
-//   let filteredProducts = [];
-//   const search = req.query.q;
-//   search.toLowerCase();
-//   filteredProducts = products.filter((product) => {
-//     if (
-//       product.name.toLowerCase().includes(search) ||
-//       product.description.toLowerCase().includes(search) ||
-//       product.OS.toLowerCase().includes(search)
-//     )
-//       return true;
-//     else return false;
-//   });
-//   res.json(filteredProducts);
-// });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

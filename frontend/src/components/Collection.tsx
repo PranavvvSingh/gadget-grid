@@ -40,7 +40,7 @@ const Collection = () => {
   }
   const fetchData = async () => {
     const { data }: responseType = await axios.get(
-      "http://localhost:3000/products",
+      "https://gadgetsapi-xkx9.onrender.com/products",
       { params }
     );
     setPhones(data);

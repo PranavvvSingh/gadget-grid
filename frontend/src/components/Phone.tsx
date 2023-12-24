@@ -12,7 +12,9 @@ const Phone = () => {
   const { id } = useParams();
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get("http://localhost:3000/products/" + id);
+      const { data } = await axios.get(
+        "https://gadgetsapi-xkx9.onrender.com/products" + "/" + id
+      );
       setPhone(data);
     };
     fetchData();

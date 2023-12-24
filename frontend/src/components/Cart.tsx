@@ -25,7 +25,7 @@ const CartItem = ({ id, quantity }: propsType) => {
   useEffect(() => {
     const fetchData = async () => {
       const { data }: responseType = await axios.get(
-        "http://localhost:3000/products/" + id
+        "https://gadgetsapi-xkx9.onrender.com/products" + "/" + id
       );
       setPhone(data);
     };
@@ -97,7 +97,7 @@ const CartItem = ({ id, quantity }: propsType) => {
 
 async function fetchPhonePrice(id: number){
   const { data }: responseType = await axios.get(
-    "http://localhost:3000/products/" + id
+    "https://gadgetsapi-xkx9.onrender.com/products" + "/" + id
   );
   return data.price
 }
