@@ -6,7 +6,7 @@
 
 [https://gadgetgrid.onrender.com](https://gadgetgrid.onrender.com)
 
-<h2>🛠️ Installation Steps:</h2>
+<h2>🛠️ Run Project:</h2>
 
 <p>1. Open frontend folder:</p>
 
