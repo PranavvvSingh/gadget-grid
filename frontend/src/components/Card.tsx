@@ -16,11 +16,11 @@ const Card = ({ id, name, price, rating, remainingUnits, image }: cardType) => {
   }
   const quantity = getItemQuantity(id);
   return (
-    <div className="relative flex flex-col gap-y-1 justify-center w-[160px] md:w-[250px]">
+    <div className="relative flex flex-col gap-y-1 justify-center w-[140px] md:w-[250px]">
       <img
         src={image}
         alt=""
-        className="w-[160px] h-[160px] md:w-[230px] md:h-[230px] mx-auto cursor-pointer"
+        className="w-[140px] h-[140px] md:w-[230px] md:h-[230px] mx-auto cursor-pointer"
         onClick={() => navigate("/product/" + id)}
       />
       <FaHeart

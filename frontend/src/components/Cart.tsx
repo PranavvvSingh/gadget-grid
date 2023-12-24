@@ -32,6 +32,7 @@ const CartItem = ({ id, quantity }: propsType) => {
     fetchData();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  console.log("render")
 
   return (
     <div className="grid grid-cols-3 md:grid-cols-5 md:gap-5 items-center mt-3">

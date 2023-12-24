@@ -14,7 +14,7 @@ const Search = () => {
   },[search])
   return (
     <form
-      className="flex rounded-full py-1 px-2 w-[300px] border border-white"
+      className="flex rounded-full py-2 px-2 w-[300px] border border-white"
       onSubmit={(e) => handleSubmit(e)}
     >
       <input

@@ -16,7 +16,7 @@ const Header = () => {
   const loc=useLocation()
 
   return (
-    <div className="sticky top-0 z-30 text-white bg-neutral-900 h-[60px] border-b-2 flex justify-between px-4 md:px-8 py-3">
+    <div className="sticky top-0 z-30 text-white bg-neutral-900 h-[65px] flex justify-between px-4 md:px-8 py-3">
       <div className={`flex gap-3 ${isOpen ? "hidden md:flex" : ""}`}>
         <NavLink to="/" className="flex items-center text-xl md:text-2xl">
           <Logo />
