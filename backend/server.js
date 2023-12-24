@@ -17,12 +17,12 @@ app.get("/products", (req, res) => {
     req.query;
 
   if (search) {
-    search.toLowerCase();
+    const searchq=search.toLowerCase();
     filteredProducts = products.filter((product) => {
       if (
-        product.name.toLowerCase().includes(search) ||
-        product.description.toLowerCase().includes(search) ||
-        product.OS.toLowerCase().includes(search)
+        product.name.toLowerCase().includes(searchq) ||
+        product.description.toLowerCase().includes(searchq) ||
+        product.OS.toLowerCase().includes(searchq)
       )
         return true;
       else return false;

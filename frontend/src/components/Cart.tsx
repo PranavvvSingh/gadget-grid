@@ -15,7 +15,7 @@ type responseType = {
 const CartItem = ({ id, name, price, rating, image }: cardType) => {
   const { cartItems } = useMobileCartContext();
   const item =cartItems.find((item)=>item.id===id)
-  const quantity= item!.quantity
+  const quantity= item?.quantity || 0
   const navigate = useNavigate();
   const { incItemQuantity, decItemQuantity, removeFromCart } =
     useMobileCartContext();
