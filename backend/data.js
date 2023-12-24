@@ -146,7 +146,7 @@ const mobileStoreData = [
       "A budget-friendly phone with a high-resolution camera and a large battery.",
     remainingUnits: 40,
     image:
-      "https://www.tranza.com/content/images/thumbs/0013193_celular-xiaomi-redmi-10ds-64gb-blue_600.jpeg",
+      "https://i02.appmifile.com/979_operator_in/12/08/2021/6e2a99cf7decf70d9e58a2871c1f19c0.png",
   },
   {
     id: 6,

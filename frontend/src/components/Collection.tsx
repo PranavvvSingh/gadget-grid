@@ -4,6 +4,7 @@ import Card from "./Card";
 import { useMobileCartContext } from "@/context/ExportContext";
 import Filters from "./Filters";
 import { useEffect, useMemo, useState } from "react";
+import Loader from "./Loader";
 
 type responseType = {
   data: phoneType[];
@@ -20,6 +21,7 @@ type paramsType = {
 const Collection = () => {
   const { price, memory, os, sort, search } = useMobileCartContext();
   const [phones, setPhones] = useState<phoneType[]>([]);
+  const [loading, setLoading] = useState(true)
 
   const params = useMemo(() => {
     const paramsObj: paramsType = {};
@@ -51,15 +53,19 @@ const Collection = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       const { data }: responseType = await axios.get(
         "https://gadgetsapi-xkx9.onrender.com/products",
         { params }
       );
       setPhones(data);
+      setLoading(false)
     };
     fetchData();
   }, [params]);
 
+  if(loading) return <Loader/>
+  else
   return (
     <div className="w-11/12 md:w-5/6 mx-auto">
       <Filters />

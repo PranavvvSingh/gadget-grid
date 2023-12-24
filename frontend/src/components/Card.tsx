@@ -16,7 +16,7 @@ const Card = ({ id, name, price, rating, remainingUnits, image }: cardType) => {
   }
   const quantity = getItemQuantity(id);
   return (
-    <div className="relative flex flex-col gap-y-1 justify-center w-[140px] md:w-[250px]">
+    <div className="relative flex flex-col gap-y-1 justify-between h-[280px] md:h-auto  w-[140px] md:w-[250px]">
       <img
         src={image}
         alt=""

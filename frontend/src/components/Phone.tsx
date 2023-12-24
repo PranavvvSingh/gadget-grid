@@ -4,25 +4,35 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { IoStar } from "react-icons/io5";
 import { useMobileCartContext } from "@/context/ExportContext";
+import Loader from "./Loader";
 
 const Phone = () => {
+  const [loading, setLoading] = useState(true);
   const { incItemQuantity, decItemQuantity, getItemQuantity } =
     useMobileCartContext();
   const [phone, setPhone] = useState<phoneType>({} as phoneType);
   const { id } = useParams();
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       const { data } = await axios.get(
         "https://gadgetsapi-xkx9.onrender.com/products" + "/" + id
       );
       setPhone(data);
+      setLoading(false);
     };
     fetchData();
   }, [id]);
   const quantity = getItemQuantity(phone.id);
+  if(loading) return <Loader/>
+  else
   return (
     <div className="w-5/6 mx-auto flex flex-col md:flex-row pt-10 pb-10 items-center justify-center gap-5 ">
-      <img src={phone?.image} alt="" className="h-[200px] w-[200px] md:h-[400px] md:w-[400px]" />
+      <img
+        src={phone?.image}
+        alt=""
+        className="h-[200px] w-[200px] md:h-[400px] md:w-[400px]"
+      />
       <div className="flex flex-col gap-4 h-[400px]">
         <div>
           <div className="flex items-end gap-2">
